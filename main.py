@@ -16,7 +16,7 @@
 
 # metres to km
 def m_to_km(user_input):
-    result = (user_input * 10)
+    result = (user_input / 1000)
     return result
 
 # Celcius to farenheit
@@ -35,17 +35,42 @@ def unit_calculator():
 # # Create prompt with input for user to choose which conversion they want to make
 # #16/1/25 current code works well
 # #19/1/25############################
+
+    while True:
     conversion_selection = input('Choose the conversion you would like to complete:'
                                  '\n>1 - metres to km'
                                  '\n>2 - celcius to farenheit'
                                  '\n>3 - miles to km\n')
+    if conversion_selection not in ('1', '2', '3'):
+        print('Please enter a value from 1 - 3')
+    else:
+        break
 
-    #Get users to input the value they need converted
-    ##TO DO##
-    # How to account for instances where the user doesn't input an appropriate input
-    # 16/1/25 - current code works well
-    # 19/1/25 - how do I get input from user and convert to float and check validity of input from user. ie only float
-    user_input = float(input('enter a value to convert'))
+    # My understanding of the above is that the while loop performs the logic on the user input, and is a way to check if appropriate data is entered
+    # to continue the program. This uses an if statement to check the values is a Python tuple.
+
+# Create a check condition to make sure only valid input is recieved for the above list:
+
+
+#Get users to input the value they need converted
+##TO DO##
+# How to account for instances where the user doesn't input an appropriate input
+# 19/1/25 - see below - the while loop handles this
+# 16/1/25 - current code works well
+# 19/1/25 - how do I get input from user and convert to float and check validity of input from user. ie only float
+# The while loop works correctly as it calls a float, which covers int values also. with testing it seems that non-numerical values
+# are handled by the except ValueError, but I don't know why this works really, I did copy this from StackOverflow (https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response)
+
+    while True:
+        try:
+            user_input = float(input('enter a value to convert'))
+        except ValueError:
+            print("The input entered is invalid")
+            continue
+        else:
+            #The given input was valid and we can exit the loop and continue with the calculation
+            break
+
 
     # Perform logic on user input (conversion_selection) to call the correct function.
     # 16/1/25 - this works well
