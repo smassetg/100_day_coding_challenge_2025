@@ -37,14 +37,14 @@ def unit_calculator():
 # #19/1/25############################
 
     while True:
-    conversion_selection = input('Choose the conversion you would like to complete:'
-                                 '\n>1 - metres to km'
-                                 '\n>2 - celcius to farenheit'
-                                 '\n>3 - miles to km\n')
-    if conversion_selection not in ('1', '2', '3'):
-        print('Please enter a value from 1 - 3')
-    else:
-        break
+        conversion_selection = input('Choose the conversion you would like to complete:'
+                                     '\n>1 - metres to km'
+                                     '\n>2 - celcius to farenheit'
+                                     '\n>3 - miles to km\n')
+        if conversion_selection not in ('1', '2', '3'):
+            print('Please enter a value from 1 - 3')
+        else:
+            break
 
     # My understanding of the above is that the while loop performs the logic on the user input, and is a way to check if appropriate data is entered
     # to continue the program. This uses an if statement to check the values is a Python tuple.
