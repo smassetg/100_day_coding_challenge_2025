@@ -14,52 +14,58 @@
 # Step 1, define individual conversion functions.
 ###
 
-# metres to km
-def m_to_km(user_input):
-    result = (user_input * 10)
-    return result
+# #19/1/25############################
+#
+# # metres to km
+# def m_to_km(user_input):
+#     result = (user_input * 10)
+#     return result
+#
+# # Celcius to farenheit
+# def celcius_to_farenheit(user_input):
+#     result = (user_input * (9 / 5) + 32)
+#     return result
+#
+# # miles to km
+# def miles_to_km(user_input):
+#     result = user_input * 1.609
+#     return result
+#
+# # Create prompt with input for user to choose which conversion they want to make
+# #16/1/25 current code works well
+# conversion_selection = input('Choose the conversion you would like to complete:'
+#                              '\n>1 - metres to km'
+#                              '\n>2 - celcius to farenheit'
+#                              '\n>3 - miles to km\n')
+#
+# #Get users to input the value they need converted
+# ##TO DO##
+# # How to account for instances where the user doesn't input an appropriate input
+# # 16/1/25 - current code works well
+# user_input = float(input('enter a value to convert'))
+#
+# # Perform logic on user input (conversion_selection) to call the correct function.
+# # 16/1/25 - this works well
+# if conversion_selection == '1':
+#     print(m_to_km(user_input))
+# elif conversion_selection == '2':
+#     print(celcius_to_farenheit(user_input))
+# else:
+#     print(miles_to_km(user_input))
 
-# Celcius to farenheit
-def celcius_to_farenheit(user_input):
-    result = (user_input * (9 / 5) + 32)
-    return result
-
-# miles to km
-def miles_to_km(user_input):
-    result = user_input * 1.609
-    return result
-
-# Create prompt with input for user to choose which conversion they want to make
-#16/1/25 current code works well
-conversion_selection = input('Choose the conversion you would like to complete:'
-                             '\n>1 - metres to km'
-                             '\n>2 - celcius to farenheit'
-                             '\n>3 - miles to km\n')
-
-#Get users to input the value they need converted
-##TO DO##
-# How to account for instances where the user doesn't input an appropriate input
-# 16/1/25 - current code works well
-user_input = float(input('enter a value to convert'))
-
-# Perform logic on user input (conversion_selection) to call the correct function.
-# 16/1/25 - this works well
-if conversion_selection == '1':
-    print(m_to_km(user_input))
-elif conversion_selection == '2':
-    print(celcius_to_farenheit(user_input))
-else:
-    print(miles_to_km(user_input))
+#19/1/25###################
 
 rerun_calculator = input('Would you like to complete another calculation?'
                          '\n Y'
                          '\n N \n')
 
-check_list = ['y', 'yes', 'n', 'no']
+check_list = ['y', 'yes', 'Y']
+#19/1/25 - removed the 'n' values as it is only the yes values we want to rerun the rpogram
 
-if rerun_calculator.lower in check_list:
+if rerun_calculator in check_list:
     print('need to write a function to restart the program')
     # 16/4 - This isn't working as it is skipping to the final else statement
+    # it was the rerun_calculator.lower that wasn't working
 else:
     print('thanks for using the calculator')
 
