@@ -14,76 +14,68 @@
 # Step 1, define individual conversion functions.
 ###
 
-# #19/1/25############################
-#
-# # metres to km
-# def m_to_km(user_input):
-#     result = (user_input * 10)
-#     return result
-#
-# # Celcius to farenheit
-# def celcius_to_farenheit(user_input):
-#     result = (user_input * (9 / 5) + 32)
-#     return result
-#
-# # miles to km
-# def miles_to_km(user_input):
-#     result = user_input * 1.609
-#     return result
-#
+# metres to km
+def m_to_km(user_input):
+    result = (user_input * 10)
+    return result
+
+# Celcius to farenheit
+def celcius_to_farenheit(user_input):
+    result = (user_input * (9 / 5) + 32)
+    return result
+
+# miles to km
+def miles_to_km(user_input):
+    result = user_input * 1.609
+    return result
+
+#19/1/25 - these functions don't need to be commented out as they aren't being called
+
+def unit_calculator():
 # # Create prompt with input for user to choose which conversion they want to make
 # #16/1/25 current code works well
-# conversion_selection = input('Choose the conversion you would like to complete:'
-#                              '\n>1 - metres to km'
-#                              '\n>2 - celcius to farenheit'
-#                              '\n>3 - miles to km\n')
-#
-# #Get users to input the value they need converted
-# ##TO DO##
-# # How to account for instances where the user doesn't input an appropriate input
-# # 16/1/25 - current code works well
-# user_input = float(input('enter a value to convert'))
-#
-# # Perform logic on user input (conversion_selection) to call the correct function.
-# # 16/1/25 - this works well
-# if conversion_selection == '1':
-#     print(m_to_km(user_input))
-# elif conversion_selection == '2':
-#     print(celcius_to_farenheit(user_input))
-# else:
-#     print(miles_to_km(user_input))
+# #19/1/25############################
+    conversion_selection = input('Choose the conversion you would like to complete:'
+                                 '\n>1 - metres to km'
+                                 '\n>2 - celcius to farenheit'
+                                 '\n>3 - miles to km\n')
+
+    #Get users to input the value they need converted
+    ##TO DO##
+    # How to account for instances where the user doesn't input an appropriate input
+    # 16/1/25 - current code works well
+    # 19/1/25 - how do I get input from user and convert to float and check validity of input from user. ie only float
+    user_input = float(input('enter a value to convert'))
+
+    # Perform logic on user input (conversion_selection) to call the correct function.
+    # 16/1/25 - this works well
+    if conversion_selection == '1':
+        print(m_to_km(user_input))
+    elif conversion_selection == '2':
+        print(celcius_to_farenheit(user_input))
+    else:
+        print(miles_to_km(user_input))
 
 #19/1/25###################
 
-rerun_calculator = input('Would you like to complete another calculation?'
-                         '\n Y'
-                         '\n N \n')
+    rerun_calculator = input('Would you like to complete another calculation?'
+                             '\n Y'
+                             '\n N \n')
 
-check_list = ['y', 'yes', 'Y']
-#19/1/25 - removed the 'n' values as it is only the yes values we want to rerun the rpogram
+    check_list = ['y', 'yes', 'Y']
+    #19/1/25 - removed the 'n' values as it is only the yes values we want to rerun the rpogram
 
-if rerun_calculator in check_list:
-    print('need to write a function to restart the program')
-    # 16/4 - This isn't working as it is skipping to the final else statement
-    # it was the rerun_calculator.lower that wasn't working
-else:
-    print('thanks for using the calculator')
+    if rerun_calculator in check_list:
+        # 16/1 - This isn't working as it is skipping to the final else statement
+        # 19/1/25 it was the rerun_calculator.lower that wasn't working
+        unit_calculator()  #trying to rerun the function if the user chooses to
+    else:
+        print('thanks for using the calculator')
 
+    return
 
-# Questions / commentss with my code:
-# 11/1/24
-# are functions separate from eachother? With the  'result' this is repeated within all of the functions, but is it separate, so no error will be generated?
-# the individual variables within the functions is a pain and will be annoying to code each one, can I call this variable the same thing, say, 'user inuput' within
-# each of the functions and the code will work?
-# ANSWER
-# Functions are separate from eachother. I capture one user_unput and this is the same input for each of the functions, but it depends which one is called
+# 19/1/25 - call the function to initiate the program
 
+unit_calculator()
 
-#### Insights
-# the user input, when i called it 'user input' and passed that into the function, that worked
-# 16/1/24
-# The functions weren't working as intended as the input is a 'str' format so the maths operators weren't working
-
-
-#### Issues
 
