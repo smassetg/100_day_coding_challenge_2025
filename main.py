@@ -108,7 +108,7 @@ unit_calculator()
 
 # 19/1/25 next tasks
 # ask chat about how i can track my code a bit better, or how I can structure things instead of the dated comments that I have
-# been putting in
+# been putting in.
 # Learn about debugging with pycharm, ask chat to set some simple debugging challenges to work on in pycharm
 # get chat to review this program and provide guidance on refactoring
 # Get chat to use this code to prove my level to set me more developmental tasks
