@@ -3,9 +3,42 @@
 
 # bug_bounty.py
 
+# string_reverse_debug.py
+
+#This was the corrected code after debugging
+def reverse_string(s):
+    reversed_s = ""
+    for i in range(len(s) -1, -1, -1):
+        reversed_s += s[i]
+        print(reversed_s)
+    return reversed_s
+
+def main():
+    original = "Python"
+    reversed_version = reverse_string(original)
+    print(f"Original: {original}")
+    print(f"Reversed: {reversed_version}")
+
+if __name__ == "__main__":
+    main()
 
 
-
+#This was the original code
+# def reverse_string(s):
+#     reversed_s = ""
+#     for i in range(len(s)):
+#         reversed_s += s[i]
+#         print(reversed_s)
+#     return reversed_s
+#
+# def main():
+#     original = "Python"
+#     reversed_version = reverse_string(original)
+#     print(f"Original: {original}")
+#     print(f"Reversed: {reversed_version}")
+#
+# if __name__ == "__main__":
+#     main()
 
 
 # # list_sum_debug.py
