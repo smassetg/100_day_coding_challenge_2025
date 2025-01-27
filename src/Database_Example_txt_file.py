@@ -1,5 +1,14 @@
 import json
 
+file_path = r"C:\Python Projects\beginning_python\Files\highscore.json"
+# Set the file path as a separate variable so it is easier to change or update in the future. Note no w or r has been assigned
+
+
+def load_high_socres ():
+    # this finction loads the high scores from the high_scores.json file
+    with open(r"C:\Python Projects\beginning_python\Files\highscore.json", 'r') as highscore_file:
+        high_score_data = json.load(highscore_file)
+
 
 # high_scores = [
 #     {"player": "Alice", "score": 1000},
