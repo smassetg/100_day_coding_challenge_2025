@@ -9,22 +9,23 @@ def load_high_scores (file_path): # Note - have to include the variables to pass
     with open(file_path, 'r') as highscore_file: # read file
         return json.load(highscore_file)
 
-def save_high_scores (file_path, data):
-    # thisfunction writes the high scores to the high_scores.json file
-    with open(file_path, 'w') as highscore_file: # write file
-        json.dump(data, highscore_file, indent=4) # Add indent=4 for readability
-    print(f"Data successfully saved to {file_path}")
 
-# High score data to save
-high_scores = [
-    {"player": "Alice", "score": 1000000},
-    {"player": "Bob", "score": 800000},
-    {"player": "Jane", "score": 800}
-]
-
-# save the data:
-save_high_scores(file_path, high_scores)
-
+# def save_high_scores (file_path, data):
+#     # thisfunction writes the high scores to the high_scores.json file
+#     with open(file_path, 'w') as highscore_file: # write file
+#         json.dump(data, highscore_file, indent=4) # Add indent=4 for readability
+#     print(f"Data successfully saved to {file_path}")
+#
+# # High score data to save
+# high_scores = [
+#     {"player": "Alice", "score": 1000000},
+#     {"player": "Bob", "score": 800000},
+#     {"player": "Jane", "score": 800}
+# ]
+#
+# # save the data:
+# save_high_scores(file_path, high_scores)
+#
 #Load the data:
 loaded_data = load_high_scores(file_path)
 
