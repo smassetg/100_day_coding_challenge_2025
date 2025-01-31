@@ -1,13 +1,29 @@
 import json
 
-file_path = r"C:\Python Projects\beginning_python\Files\highscore.json"
-# Set the file path as a separate variable so it is easier to change or update in the future. Note no w or r has been assigned
+# TASKS FOR TODAY 31/1/25
+# 1 - Learn how to generate random numbers and display them aligned in the output.
+# 2 - Put random number generator in function
+# 3 - create function / logic to assess the sum of the 2 numbers and display correct / incorrect, count correct entries
+# 4 - add time limit to function before game ends
+
+# TASK 1 - RANDOM NUMBER GENERATOR
 
 
-def load_high_scores (file_path): # Note - have to include the variables to pass into the function
-    # this finction loads the high scores from the high_scores.json file
-    with open(file_path, 'r') as highscore_file: # read file
-        return json.load(highscore_file)
+
+
+
+######## THIS CODE WORKS ####### 31/1/25
+# This code reads in json files from the directory to keep track of high scores
+# The 2 functions load the json files and update the json files
+
+# file_path = r"C:\Python Projects\beginning_python\Files\highscore.json"
+# # Set the file path as a separate variable so it is easier to change or update in the future. Note no w or r has been assigned
+#
+#
+# def load_high_scores (file_path): # Note - have to include the variables to pass into the function
+#     # this finction loads the high scores from the high_scores.json file
+#     with open(file_path, 'r') as highscore_file: # read file
+#         return json.load(highscore_file)
 
 
 # def save_high_scores (file_path, data):
