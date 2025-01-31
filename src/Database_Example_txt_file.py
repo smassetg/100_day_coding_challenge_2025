@@ -1,4 +1,5 @@
 import json
+import random # to import the random generator function
 
 # TASKS FOR TODAY 31/1/25
 # 1 - Learn how to generate random numbers and display them aligned in the output.
@@ -7,7 +8,12 @@ import json
 # 4 - add time limit to function before game ends
 
 # TASK 1 - RANDOM NUMBER GENERATOR
-
+num = random.random()
+num2 = round(num*11,1)
+print(num)
+print(num2)
+print(type(num))
+print(type(num2))
 
 
 
@@ -42,11 +48,11 @@ import json
 # # save the data:
 # save_high_scores(file_path, high_scores)
 #
-#Load the data:
-loaded_data = load_high_scores(file_path)
-
-print("\nData loaded from file:")
-print(loaded_data)
+# #Load the data:
+# loaded_data = load_high_scores(file_path)
+#
+# print("\nData loaded from file:")
+# print(loaded_data)
 
 # # This is the initial list for the players and high scores.
 #
