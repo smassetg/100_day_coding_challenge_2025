@@ -7,13 +7,19 @@ import random # to import the random generator function
 # 3 - create function / logic to assess the sum of the 2 numbers and display correct / incorrect, count correct entries
 # 4 - add time limit to function before game ends
 
-# TASK 1 - RANDOM NUMBER GENERATOR
-num = random.random()
-num2 = round(num*11,1)
-print(num)
-print(num2)
-print(type(num))
-print(type(num2))
+# TASK 1 - RANDOM NUMBER GENERATOR - TASK COMPLETED
+# TASK 2 - CREATE RANDOM NUMBER GENERATOR FUNCTION
+
+# This function generates 2 random numbers, and displays them on the screen
+def random_number():
+    num = round((random.random()) * 11, )
+    num2 = round((random.random()) * 11, )
+    print(num)
+    print(num2)
+    return()
+
+# Call random_number function
+random_number()
 
 
 
@@ -76,3 +82,6 @@ print(type(num2))
 #     #content = f.read()
 #     print(f)
 
+## INTERESTING CODE SNIPPETS AND LEARNINGS##
+# 31/1/25
+# num = round((random.random())*11,) # I can combine this into one function with the round function, and the random number within this and the multiplier. The purpose of the multiplier is to make the random number bigger than a float between 0 and 1
