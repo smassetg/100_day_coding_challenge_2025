@@ -14,14 +14,18 @@ import random # to import the random generator function
 def random_number():
     num = round((random.random()) * 11, )
     num2 = round((random.random()) * 11, )
-    #num3 = num + num2
+    correct_answers = 0
+    wrong_answers = 0
     print(' ',num, '\n+',num2) # This prints the 2 random numbers and aligns them in the output, using the add operator - REF TO DO #1
     # Ask user for input
     user_input = float(input())  # Otherwise a string was being generated for the input value
     if user_input == num + num2:
         print("Well Done")
+        correct_answers += 1
     else:
-        print("Incorrect")
+        wrong_answers += 1
+    # print(correct_answers)
+    # print(wrong_answers)
     return()
 
 # Call random_number function
