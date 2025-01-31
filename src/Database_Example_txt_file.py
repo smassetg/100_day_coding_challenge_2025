@@ -14,14 +14,23 @@ import random # to import the random generator function
 def random_number():
     num = round((random.random()) * 11, )
     num2 = round((random.random()) * 11, )
-    print(num)
-    print(num2)
+    #num3 = num + num2
+    print(' ',num, '\n+',num2) # This prints the 2 random numbers and aligns them in the output, using the add operator - REF TO DO #1
+    # Ask user for input
+    user_input = float(input())  # Otherwise a string was being generated for the input value
+    if user_input == num + num2:
+        print("Well Done")
+    else:
+        print("Incorrect")
     return()
 
 # Call random_number function
 random_number()
 
-
+#### TO DO: #####
+# TO DO #1
+# include other operators that just add
+# I am not fully sure on the string profile here and how / why it is working
 
 
 ######## THIS CODE WORKS ####### 31/1/25
