@@ -12,26 +12,28 @@ import random # to import the random generator function
 
 # This function generates 2 random numbers, and displays them on the screen
 def random_number():
-    num = round((random.random()) * 11, )
-    num2 = round((random.random()) * 11, )
     correct_answers = 0
     wrong_answers = 0
-    print(' ',num, '\n+',num2) # This prints the 2 random numbers and aligns them in the output, using the add operator - REF TO DO #1
-    # Ask user for input
-    user_input = float(input())  # Otherwise a string was being generated for the input value
-    if user_input == num + num2:
-        print("Well Done")
-        correct_answers += 1
-    else:
-        wrong_answers += 1
-    # print(correct_answers)
-    # print(wrong_answers)
+    while correct_answers <= 5 and wrong_answers <= 5: # what is with the AND, and how does it work? TODO
+        num = round((random.random()) * 11, )
+        num2 = round((random.random()) * 11, )
+
+        print(' ',num, '\n+',num2) # This prints the 2 random numbers and aligns them in the output, using the add operator - REF TODO #1
+        # Ask user for input
+        user_input = float(input())  # Otherwise a string was being generated for the input value
+        if user_input == num + num2:
+            print("Well Done")
+            correct_answers += 1
+        else:
+            wrong_answers += 1
+        print('correct answers:', correct_answers)
+        print('wrong answers:', wrong_answers)
     return()
 
 # Call random_number function
 random_number()
 
-#### TO DO: #####
+#### TODO: #####
 # TO DO #1
 # include other operators that just add
 # I am not fully sure on the string profile here and how / why it is working
