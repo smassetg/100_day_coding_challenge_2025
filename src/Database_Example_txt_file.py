@@ -5,10 +5,14 @@ import random # to import the random generator function
 # 1 - Learn how to generate random numbers and display them aligned in the output.
 # 2 - Put random number generator in function
 # 3 - create function / logic to assess the sum of the 2 numbers and display correct / incorrect, count correct entries
-# 4 - add time limit to function before game ends
+# TASKS FOR TODAY 1/2/25
+# 4 - add time limit to function before game to run for, say 30s
+# 5 - Add high score functionality with .json file
+# 6 - Functionality for choosing what to practice
+# 7 - Time Trial or number of correct answers function
 
 # TASK 1 - RANDOM NUMBER GENERATOR - TASK COMPLETED
-# TASK 2 - CREATE RANDOM NUMBER GENERATOR FUNCTION
+# TASK 2 + 3 - CREATE RANDOM NUMBER GENERATOR FUNCTION
 
 # This function generates 2 random numbers, and displays them on the screen
 def random_number():
