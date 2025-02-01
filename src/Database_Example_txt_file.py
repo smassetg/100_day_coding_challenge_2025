@@ -1,41 +1,77 @@
 import json
 import random # to import the random generator function
+import time
 
 # TASKS FOR TODAY 31/1/25
-# 1 - Learn how to generate random numbers and display them aligned in the output.
-# 2 - Put random number generator in function
-# 3 - create function / logic to assess the sum of the 2 numbers and display correct / incorrect, count correct entries
+# 1 - Learn how to generate random numbers and display them aligned in the output. - COMPLETED
+# 2 - Put random number generator in function - COMPLETED
+# 3 - create function / logic to assess the sum of the 2 numbers and display correct / incorrect, count correct entries - COMPLETED
 # TASKS FOR TODAY 1/2/25
 # 4 - add time limit to function before game to run for, say 30s
 # 5 - Add high score functionality with .json file
 # 6 - Functionality for choosing what to practice
 # 7 - Time Trial or number of correct answers function
 
-# TASK 1 - RANDOM NUMBER GENERATOR - TASK COMPLETED
-# TASK 2 + 3 - CREATE RANDOM NUMBER GENERATOR FUNCTION
 
-# This function generates 2 random numbers, and displays them on the screen
-def random_number():
+def random_number_time_trial():
+    start_time = time.time()
     correct_answers = 0
     wrong_answers = 0
-    while correct_answers <= 5 and wrong_answers <= 5: # what is with the AND, and how does it work? TODO
-        num = round((random.random()) * 11, )
-        num2 = round((random.random()) * 11, )
 
-        print(' ',num, '\n+',num2) # This prints the 2 random numbers and aligns them in the output, using the add operator - REF TODO #1
-        # Ask user for input
-        user_input = float(input())  # Otherwise a string was being generated for the input value
-        if user_input == num + num2:
-            print("Well Done")
-            correct_answers += 1
-        else:
-            wrong_answers += 1
-        print('correct answers:', correct_answers)
-        print('wrong answers:', wrong_answers)
+    elapsed_seconds = 0 # To prevent duplicate prints
+
+    while int(time.time() - start_time) < 10:
+        current_second = int(time.time() - start_time)
+
+        if current_second > elapsed_seconds: # Print only when a new second starts
+            num = round((random.random()) * 11, )
+            num2 = round((random.random()) * 11, )
+
+            print(' ', num, '\n+', num2)  # This prints the 2 random numbers and aligns them in the output, using the add operator - REF TODO #1
+            # Ask user for input
+            user_input = float(input())  # Otherwise a string was being generated for the input value
+            if user_input == num + num2:
+                correct_answers += 1
+            else:
+                wrong_answers += 1
+            elapsed_seconds = current_second
+
+            print('correct answers:', correct_answers)
+            print('wrong answers:', wrong_answers)
+            #TODO these statements are printing in the wrong spot, i want them to print at the end.
+
     return()
 
-# Call random_number function
-random_number()
+random_number_time_trial()
+
+
+
+
+#
+#
+# # This function generates 2 random numbers, and displays them on the screen
+# ######### THIS CODE WORKS 31/1/25 #########
+# def random_number():
+#     correct_answers = 0
+#     wrong_answers = 0
+#     while correct_answers <= 5 and wrong_answers <= 5: # what is with the AND, and how does it work? TODO
+#         num = round((random.random()) * 11, )
+#         num2 = round((random.random()) * 11, )
+#
+#         print(' ',num, '\n+',num2) # This prints the 2 random numbers and aligns them in the output, using the add operator - REF TODO #1
+#         # Ask user for input
+#         user_input = float(input())  # Otherwise a string was being generated for the input value
+#         if user_input == num + num2:
+#             print("Well Done")
+#             correct_answers += 1
+#         else:
+#             wrong_answers += 1
+#         print('correct answers:', correct_answers)
+#         print('wrong answers:', wrong_answers)
+#     return()
+#
+# # Call random_number function
+# random_number()
 
 #### TODO: #####
 # TO DO #1
@@ -104,3 +140,19 @@ random_number()
 ## INTERESTING CODE SNIPPETS AND LEARNINGS##
 # 31/1/25
 # num = round((random.random())*11,) # I can combine this into one function with the round function, and the random number within this and the multiplier. The purpose of the multiplier is to make the random number bigger than a float between 0 and 1
+
+
+
+########################
+## This is the time code that prints the number of seconds / runs the loop for a pre-determined number of seconds
+# start_time = time.time()
+#
+# last_printed_second = 0 # To prevent duplicate prints
+# print(last_printed_second)
+#
+# while int(time.time() - start_time) < 10:
+#     current_second = int(time.time() - start_time)
+#
+#     if current_second > last_printed_second: # Print only when a new second starts
+#         print(current_second)
+#         last_printed_second = current_second
