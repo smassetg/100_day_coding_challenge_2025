@@ -1,18 +1,16 @@
 # This file runs a math game where the user is prompted to choose which mode they want to play and they run a time trial with the program keeping track of the high scores
+# Refer progress_log.txt for code comments and indights
+# Refer README.md
 
 import json
 import random # to import the random generator function
 import time
 
-# TASKS FOR TODAY 31/1/25
-# 1 - Learn how to generate random numbers and display them aligned in the output. - COMPLETED
-# 2 - Put random number generator in function - COMPLETED
-# 3 - create function / logic to assess the sum of the 2 numbers and display correct / incorrect, count correct entries - COMPLETED
-# TASKS FOR TODAY 1/2/25
-# 4 - add time limit to function before game to run for, say 30s
-# 5 - Add high score functionality with .json file
-# 6 - Functionality for choosing what to practice
-# 7 - Time Trial or number of correct answers function
+def  generate_numbers():
+    num = round((random.random()) * 11, )
+    num2 = round((random.random()) * 11, )
+    return(num, num2, num3)
+
 
 
 def random_number_time_trial():
@@ -26,10 +24,9 @@ def random_number_time_trial():
         current_second = int(time.time() - start_time)
 
         if current_second > elapsed_seconds: # Print only when a new second starts
-            num = round((random.random()) * 11, )
-            num2 = round((random.random()) * 11, )
 
-            print(' ', num, '\n+', num2)  # This prints the 2 random numbers and aligns them in the output, using the add operator - REF TODO #1
+            num, num2 = generate_numbers() # Store the returned values in variables
+            print(' ', num, '\n+', num2)
             # Ask user for input
             user_input = float(input())  # Otherwise a string was being generated for the input value
             if user_input == num + num2:
@@ -38,10 +35,8 @@ def random_number_time_trial():
                 wrong_answers += 1
             elapsed_seconds = current_second
 
-            print('correct answers:', correct_answers)
-            print('wrong answers:', wrong_answers)
-            #TODO these statements are printing in the wrong spot, i want them to print at the end.
-            #FIXME
+    print('correct answers:', correct_answers)
+    print('wrong answers:', wrong_answers) # To make the print statements display at the end of the game, they needed to be included within the While loop
 
     return()
 
@@ -75,11 +70,6 @@ random_number_time_trial()
 #
 # # Call random_number function
 # random_number()
-
-#### TODO: #####
-# TO DO #1
-# include other operators that just add
-# I am not fully sure on the string profile here and how / why it is working
 
 
 ######## THIS CODE WORKS ####### 31/1/25
