@@ -9,8 +9,7 @@ import time
 def  generate_numbers():
     num = round((random.random()) * 11, )
     num2 = round((random.random()) * 11, )
-    return(num, num2, num3)
-
+    return(num, num2)
 
 
 def random_number_time_trial():
