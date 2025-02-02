@@ -1,0 +1,30 @@
+This is a readme file for the progress on database_Example_txt_file.py
+
+- [ ]
+- [ ]
+- [ ]
+
+
+--- SUMMARY OF WORK ---
+
+
+
+--- FEATURES IN PROGRESS ---
+
+
+--- COMPLETED FEATURES ---
+
+
+
+--- BUG TRACKING ---
+
+
+
+--- IDEAS FOR IMPROVEMENT ---
+
+
+--- CHALLENGES & DEBUGGING NOTES ---
+
+
+
+--- LEARNINGS & REFLECTIONS ---

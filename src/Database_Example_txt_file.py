@@ -1,3 +1,5 @@
+# This file runs a math game where the user is prompted to choose which mode they want to play and they run a time trial with the program keeping track of the high scores
+
 import json
 import random # to import the random generator function
 import time
