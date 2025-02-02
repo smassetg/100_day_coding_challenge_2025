@@ -39,6 +39,7 @@ def random_number_time_trial():
             print('correct answers:', correct_answers)
             print('wrong answers:', wrong_answers)
             #TODO these statements are printing in the wrong spot, i want them to print at the end.
+            #FIXME
 
     return()
 
