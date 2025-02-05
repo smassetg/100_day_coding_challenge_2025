@@ -2,14 +2,17 @@
 # Refer progress_log.txt for code comments and indights
 # Refer README.md
 
+
 import json
 import random # to import the random generator function
 import time
 
+max_number = 11
+
 def  generate_numbers():
-    num = round((random.random()) * 11, )
-    num2 = round((random.random()) * 11, )
-    return(num, num2)
+    num = round(random.randint(0, max_number))
+    num2 = round(random.randint(0, max_number))
+    return num, num2
 
 
 def random_number_time_trial():
@@ -37,7 +40,6 @@ def random_number_time_trial():
     print('correct answers:', correct_answers)
     print('wrong answers:', wrong_answers) # To make the print statements display at the end of the game, they needed to be included within the While loop
 
-    return()
 
 random_number_time_trial()
 
