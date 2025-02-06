@@ -6,7 +6,31 @@
 import json
 import random # to import the random generator function
 import time
+import tkinter as tk
 
+
+root = tk.Tk()  # Create the main window
+root.title("Countdown Timer")  # Set window title
+root.geometry("300x200")  # Set window size
+
+label = tk.Label(root, text="5", font=("Arial", 48))  # Create a label for the countdown
+label.pack(expand=True)  # Center the label
+
+def countdown(seconds):
+    if seconds == -1:
+        root.destroy()
+    else:
+        label.config(text=str(seconds))  # Update label text
+        root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
+
+
+countdown(10)
+
+root.mainloop()  # Run the Tkinter event loop
+
+
+
+# Fixed variables
 max_number = 11
 
 def  generate_numbers():
@@ -14,34 +38,46 @@ def  generate_numbers():
     num2 = round(random.randint(0, max_number))
     return num, num2
 
-
-def random_number_time_trial():
-    start_time = time.time()
-    correct_answers = 0
-    wrong_answers = 0
-
-    elapsed_seconds = 0 # To prevent duplicate prints
-
-    while int(time.time() - start_time) < 10:
-        current_second = int(time.time() - start_time)
-
-        if current_second > elapsed_seconds: # Print only when a new second starts
-
-            num, num2 = generate_numbers() # Store the returned values in variables
-            print(' ', num, '\n+', num2)
-            # Ask user for input
-            user_input = float(input())  # Otherwise a string was being generated for the input value
-            if user_input == num + num2:
-                correct_answers += 1
-            else:
-                wrong_answers += 1
-            elapsed_seconds = current_second
-
-    print('correct answers:', correct_answers)
-    print('wrong answers:', wrong_answers) # To make the print statements display at the end of the game, they needed to be included within the While loop
+# def countdown():
+#     start_time = time.time()
+#     elapsed_time = 0
+#
+#     while int(time.time() - start_time) < 5:
+#         current_second = int(time.time() - start_time)
+#         if current_second > elapsed_time:
+#             print(current_second)
+#             elapsed_time = current_second
 
 
-random_number_time_trial()
+
+#
+# def random_number_time_trial():
+#     start_time = time.time()
+#     correct_answers = 0
+#     wrong_answers = 0
+#
+#     elapsed_seconds = 0 # To prevent duplicate prints
+#
+#     while int(time.time() - start_time) < 10:
+#         current_second = int(time.time() - start_time)
+#
+#         if current_second > elapsed_seconds: # Print only when a new second starts
+#
+#             num, num2 = generate_numbers() # Store the returned values in variables
+#             print(' ', num, '\n+', num2)
+#             # Ask user for input
+#             user_input = float(input())  # Otherwise a string was being generated for the input value
+#             if user_input == num + num2:
+#                 correct_answers += 1
+#             else:
+#                 wrong_answers += 1
+#             elapsed_seconds = current_second
+#
+#     print('correct answers:', correct_answers)
+#     print('wrong answers:', wrong_answers) # To make the print statements display at the end of the game, they needed to be included within the While loop
+#
+#
+# random_number_time_trial()
 
 
 
