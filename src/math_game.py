@@ -11,21 +11,54 @@ import tkinter as tk
 
 root = tk.Tk()  # Create the main window
 root.title("Countdown Timer")  # Set window title
-root.geometry("300x200")  # Set window size
+root.geometry("500x500")  # Set window size
 
-label = tk.Label(root, text="5", font=("Arial", 48))  # Create a label for the countdown
-label.pack(expand=True)  # Center the label
+label = tk.Label(root, text="5", font=("Arial", 32))  # Create a label for the countdown
+label2 = tk.Label(root, text="5", font=("Arial", 32))  # Create a label for the countdown
+label3 = tk.Label(root, text="+", font=("Arial", 32))  # Create a label for the countdown
+label4 = tk.Label(root, text="10", font=("Arial", 32))  # Create a label for the countdown
+#label.pack(expand=True)  # Center the label
+label.place(relx = 1.0, rely = 0.0, x=-25, y = 20, anchor = 'ne')
 
-def countdown(seconds):
-    if seconds == -1:
-        root.destroy()
-    else:
-        label.config(text=str(seconds))  # Update label text
-        root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
+# This one works the best
+# label2.place(relx = 0.52, rely = 0.4, anchor = 'center')
+# label3.place(relx = 0.4, rely = 0.5, anchor = 'center')
+# label4.place(relx = 0.5, rely = 0.5, anchor = 'center')
+
+# label2.place(relx=0.55, rely=0.4, anchor='e')  # Align right
+# label3.place(relx=0.45, rely=0.5, anchor='e')  # Align right (operator)
+# label4.place(relx=0.55, rely=0.6, anchor='e')  # Align right
+
+# label2.grid(row=5, column=6, sticky="e")  # Top number, right-aligned
+# label3.grid(row=6, column=5, sticky="e")  # "+" sign, right-aligned
+# label4.grid(row=6, column=6, sticky="e")  # Bottom number, right-aligned
+# Changing these valuse didn't do anything - I think it could be the sticky "e"
+
+math_frame = tk.Frame(root)
+math_frame.place(relx=0.5, rely=0.5, anchor="center")  # Centering the frame
+
+# Add labels inside math_frame (not root!)
+label2 = tk.Label(math_frame, text="5", font=("Arial", 32))
+label3 = tk.Label(math_frame, text="+", font=("Arial", 32))
+label4 = tk.Label(math_frame, text="10", font=("Arial", 32))
+
+# Position labels inside the math_frame
+label2.grid(row=0, column=1, sticky="e")  # Top number
+label3.grid(row=1, column=0, sticky="e")  # "+" sign
+label4.grid(row=1, column=1, sticky="e")  # Bottom number
 
 
-countdown(10)
 
+# def countdown(seconds):
+#     if seconds == -1:
+#         root.destroy()
+#     else:
+#         label.config(text=str(seconds))  # Update label text
+#         root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
+#
+#
+# countdown(10)
+#
 root.mainloop()  # Run the Tkinter event loop
 
 
