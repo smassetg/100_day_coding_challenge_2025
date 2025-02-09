@@ -43,10 +43,7 @@ def countdown(seconds):
         root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
     return()
 
-#
-countdown(4)
-#
-root.mainloop()  # Run the Tkinter event loop
+
 
 
 
