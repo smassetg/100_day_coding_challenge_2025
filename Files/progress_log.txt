@@ -6,11 +6,12 @@ This is a readme file for the progress on math_game.py
 
 
 --- SUMMARY OF WORK ---
-
+[9/2/25]
+ - Updated functionality for GUI of maths_game
 
 
 --- FEATURES IN PROGRESS ---
-- [9/2/25] - Adding GUI functionality with TKinter
+- [9/2/25] - Adding GUI functionality with TKinter, updating labels, accepting user input
 
 --- COMPLETED FEATURES ---
 
@@ -31,6 +32,7 @@ This is a readme file for the progress on math_game.py
 - [9/2/25] - math_frame.place(relx=0.5, rely=0.5, anchor="center")  # Centering the frame, unsure how this works
 - [9/2/25] - label2.grid(row=0, column=1, sticky="e")  # Top number. # Not sure how this works, especially sticky and also general placement of element - how could I shift the values up more? Or move them around on the page?
 - [9/2/25] - #label.pack(expand=True)  # Center the label - Not sure what this means in terms of working with labels
+- [9/2/25] - label2.grid(row=0, column=1, sticky="e")  # Top number - How can I shift this up more within the window?
 
 --- LEARNINGS & REFLECTIONS ---
 - [2/2/25] -

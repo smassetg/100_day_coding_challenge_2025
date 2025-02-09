@@ -22,29 +22,29 @@ label.place(relx = 1.0, rely = 0.0, x=-25, y = 20, anchor = 'ne')
 label5 = tk.Label(root, text="Input", font=("Arial", 25))  # Create a label for the user input
 label5.place(relx = 0.5, rely = 0.5, x=45, y = 75, anchor = 'ne') # Label placement
 # Label6 placement, "Game Over" message, under Label 5
-label6 = tk.Label(root, text="Game Over", font=("Arial", 25))  # Create a label for the user input
+label6 = tk.Label(root, text="", font=("Arial", 25))  # Create a label for the user input
 label6.place(relx = 0.5, rely = 0.5, x=90, y = 150, anchor = 'ne') # Label placement
 
 # Labels for equation figures, grid placement
-label2 = tk.Label(math_frame, text=5, font=("Arial", 32))  # Create a label for the equation
+label2 = tk.Label(math_frame, text=5, font=("Arial", 32))  # Label for the equation
 label2.grid(row=0, column=1, sticky="e")  # Top number
-label3 = tk.Label(math_frame, text="+", font=("Arial", 32))  # Create a label for the equation
+label3 = tk.Label(math_frame, text="+", font=("Arial", 32))  # Label for the equation
 label3.grid(row=1, column=0, sticky="e")  # "+" sign
-label4 = tk.Label(math_frame, text=10, font=("Arial", 32))  # Create a label for the equation
+label4 = tk.Label(math_frame, text=10, font=("Arial", 32))  # Label for the equation
 label4.grid(row=1, column=1, sticky="e")  # Bottom number
-
 
 
 def countdown(seconds):
     if seconds == -1:
         #root.destroy()
-        print ('Game Over')
+        label6.config(text="Game Over") # Return Game Over message
     else:
         label.config(text=str(seconds))  # Update label text
         root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
+    return()
 
 #
-countdown(10)
+countdown(4)
 #
 root.mainloop()  # Run the Tkinter event loop
 
