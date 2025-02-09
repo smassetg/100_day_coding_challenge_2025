@@ -1,4 +1,4 @@
-This is a readme file for the progress on database_Example_txt_file.py
+This is a readme file for the progress on math_game.py
 
 - [ ]
 - [ ]
@@ -10,7 +10,7 @@ This is a readme file for the progress on database_Example_txt_file.py
 
 
 --- FEATURES IN PROGRESS ---
-
+- [9/2/25] - Adding GUI functionality with TKinter
 
 --- COMPLETED FEATURES ---
 
@@ -19,8 +19,8 @@ This is a readme file for the progress on database_Example_txt_file.py
 --- BUG TRACKING ---
 
 
-
 --- IDEAS FOR IMPROVEMENT ---
+- [9/2/25] - Add a logging function to act as a check for how your code is executing. Will this slow the program down if you're logging everything?
 
 
 --- CHALLENGES & DEBUGGING NOTES ---
@@ -28,7 +28,7 @@ This is a readme file for the progress on database_Example_txt_file.py
 
 --- QUESTIONS TO FOLLOW UP ON ---
 - [2/2/25] - print(' ', num, '\n+', num2)  # This prints the 2 random numbers and aligns them in the output, using the add operator. Ask Chat for explaination on what is happening here
-
+- [9/2/25] - math_frame.place(relx=0.5, rely=0.5, anchor="center")  # Centering the frame, unsure how this works
 
 --- LEARNINGS & REFLECTIONS ---
 - [2/2/25] -
