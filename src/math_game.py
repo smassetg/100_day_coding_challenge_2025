@@ -7,6 +7,23 @@ import random # to import the random generator function
 import time
 import tkinter as tk
 
+# Program Functions
+
+def countdown(seconds):
+    if seconds == -1:
+        #root.destroy()
+        label6.config(text="Game Over") # Return Game Over message
+    else:
+        label.config(text=str(seconds))  # Update label text
+        root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
+
+
+def get_user_input(event=None): # Accept event arguement (required for .bind)
+    user_answer = entry_box.get()
+    print(user_answer)
+    entry_box.delete(0, tk.END)
+
+
 root = tk.Tk()  # Create the main window
 math_frame = tk.Frame(root)
 math_frame.place(relx=0.5, rely=0.5, anchor="center")  # Centering the frame
@@ -18,12 +35,16 @@ root.geometry("500x500")  # Set window size
 # Label placement, countdown timer, top left
 label = tk.Label(root, text="5", font=("Arial", 32))  # Create a label for the countdown
 label.place(relx = 1.0, rely = 0.0, x=-25, y = 20, anchor = 'ne')
-# Label5 placement, user input, under equation
-label5 = tk.Label(root, text="Input", font=("Arial", 25))  # Create a label for the user input
-label5.place(relx = 0.5, rely = 0.5, x=45, y = 75, anchor = 'ne') # Label placement
-# Label6 placement, "Game Over" message, under Label 5
+# Label for user input, alignment under equation
+entry_box = tk.Entry(root, font=("Arial", 25), width = 5, justify='center')  # Create an entry_box for the user input
+entry_box.place(relx = 0.5, rely = 0.5, x=50, y = 75, anchor = 'ne') # Label placement
+entry_box.focus_set() # This makes the cursor active in the box on start up
+entry_box.bind("<Return>", get_user_input)
+# Label6 placement, "Game Over" message, under entry_box
 label6 = tk.Label(root, text="", font=("Arial", 25))  # Create a label for the user input
 label6.place(relx = 0.5, rely = 0.5, x=90, y = 150, anchor = 'ne') # Label placement
+
+
 
 # Labels for equation figures, grid placement
 label2 = tk.Label(math_frame, text=5, font=("Arial", 32))  # Label for the equation
@@ -33,15 +54,12 @@ label3.grid(row=1, column=0, sticky="e")  # "+" sign
 label4 = tk.Label(math_frame, text=10, font=("Arial", 32))  # Label for the equation
 label4.grid(row=1, column=1, sticky="e")  # Bottom number
 
+# call countdown function with # seconds
+countdown(4)
+# Call mainloop function
+root.mainloop()  # Run the Tkinter event loop
 
-def countdown(seconds):
-    if seconds == -1:
-        #root.destroy()
-        label6.config(text="Game Over") # Return Game Over message
-    else:
-        label.config(text=str(seconds))  # Update label text
-        root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
-    return()
+
 
 
 
