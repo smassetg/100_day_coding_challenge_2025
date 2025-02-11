@@ -23,17 +23,22 @@ def countdown(seconds):
         root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
 
 def get_user_input(event=None): # Accept event arguement (required for .bind)
-    user_answer = entry_box.get()
+    user_answer = entry_box.get().strip()
     print(user_answer)
     entry_box.delete(0, tk.END)
+
+    if user_answer.isdigit() and int(user_answer) == num + num2:
+        print("correct")
+    else:
+        print("incorrect")
+
+    generate_numbers() # Calls random number generator within get_user_input
 
 def  generate_numbers():
     global num, num2 # store globally so we can access them in get_user_input()
     num, num2 = random.randint(0, max_number), random.randint(0, max_number)
     label2.config(text=str(num))  # Update UI
     label4.config(text=str(num2))  # Update UI
-    return num, num2
-
 
 
 

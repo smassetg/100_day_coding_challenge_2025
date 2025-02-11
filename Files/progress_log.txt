@@ -35,6 +35,8 @@ This is a readme file for the progress on math_game.py
 - [9/2/25] - #label.pack(expand=True)  # Center the label - Not sure what this means in terms of working with labels
 - [9/2/25] - label2.grid(row=0, column=1, sticky="e")  # Top number - How can I shift this up more within the window?
 - [9/2/25] - Unsure about the full mechanics of the user input box
+- [11/2/25] - Unsure about this code withing get_user_input(), if user_answer.isdigit() and int(user_answer) == num + num2:. Is this checking against the user entering not a number?
+
 
 --- LEARNINGS & REFLECTIONS ---
 - [2/2/25] -
