@@ -7,7 +7,12 @@ import random # to import the random generator function
 import time
 import tkinter as tk
 
-# Program Functions
+###### Fixed variables
+max_number = 11
+num, num2 = 0, 0
+
+
+###### Program Functions
 
 def countdown(seconds):
     if seconds == -1:
@@ -17,13 +22,22 @@ def countdown(seconds):
         label.config(text=str(seconds))  # Update label text
         root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
 
-
 def get_user_input(event=None): # Accept event arguement (required for .bind)
     user_answer = entry_box.get()
     print(user_answer)
     entry_box.delete(0, tk.END)
 
+def  generate_numbers():
+    global num, num2 # store globally so we can access them in get_user_input()
+    num, num2 = random.randint(0, max_number), random.randint(0, max_number)
+    label2.config(text=str(num))  # Update UI
+    label4.config(text=str(num2))  # Update UI
+    return num, num2
 
+
+
+
+# Initiate the tk windonw
 root = tk.Tk()  # Create the main window
 math_frame = tk.Frame(root)
 math_frame.place(relx=0.5, rely=0.5, anchor="center")  # Centering the frame
@@ -45,7 +59,6 @@ label6 = tk.Label(root, text="", font=("Arial", 25))  # Create a label for the u
 label6.place(relx = 0.5, rely = 0.5, x=90, y = 150, anchor = 'ne') # Label placement
 
 
-
 # Labels for equation figures, grid placement
 label2 = tk.Label(math_frame, text=5, font=("Arial", 32))  # Label for the equation
 label2.grid(row=0, column=1, sticky="e")  # Top number
@@ -61,17 +74,6 @@ root.mainloop()  # Run the Tkinter event loop
 
 
 
-
-
-
-
-# Fixed variables
-max_number = 11
-
-def  generate_numbers():
-    num = round(random.randint(0, max_number))
-    num2 = round(random.randint(0, max_number))
-    return num, num2
 
 # def countdown():
 #     start_time = time.time()
