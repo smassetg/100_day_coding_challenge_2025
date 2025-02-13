@@ -19,6 +19,7 @@ def countdown(seconds):
     if seconds == -1:
         #root.destroy()
         label6.config(text="Game Over") # Return Game Over message
+        entry_box.config(state="disabled") # This disables the entry box once time reaches 0
     else:
         label.config(text=str(seconds))  # Update label text
         root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
