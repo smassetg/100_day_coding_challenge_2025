@@ -23,23 +23,33 @@ def countdown(seconds):
         root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
 
 def get_user_input(event=None): # Accept event arguement (required for .bind)
+    # Set values to count correct / incorrect answers
+    correct_answers = 0
+    wrong_answers = 0
+
     user_answer = entry_box.get().strip()
     print(user_answer)
     entry_box.delete(0, tk.END)
 
     if user_answer.isdigit() and int(user_answer) == num + num2:
         print("correct")
+        correct_answers += 1
     else:
         print("incorrect")
+        wrong_answers += 1
+
+    print("Wrong answers:", wrong_answers)
+    print("correct answers:", correct_answers)
 
     generate_numbers() # Calls random number generator within get_user_input
+
+    return(correct_answers, wrong_answers)
 
 def  generate_numbers():
     global num, num2 # store globally so we can access them in get_user_input()
     num, num2 = random.randint(0, max_number), random.randint(0, max_number)
     label2.config(text=str(num))  # Update UI
     label4.config(text=str(num2))  # Update UI
-
 
 
 # Initiate the tk windonw
@@ -65,19 +75,21 @@ label6.place(relx = 0.5, rely = 0.5, x=90, y = 150, anchor = 'ne') # Label place
 
 
 # Labels for equation figures, grid placement
-label2 = tk.Label(math_frame, text=5, font=("Arial", 32))  # Label for the equation
+label2 = tk.Label(math_frame, text = " ", font=("Arial", 32))  # Label for the equation
 label2.grid(row=0, column=1, sticky="e")  # Top number
 label3 = tk.Label(math_frame, text="+", font=("Arial", 32))  # Label for the equation
 label3.grid(row=1, column=0, sticky="e")  # "+" sign
-label4 = tk.Label(math_frame, text=10, font=("Arial", 32))  # Label for the equation
+label4 = tk.Label(math_frame, text=" ", font=("Arial", 32))  # Label for the equation
 label4.grid(row=1, column=1, sticky="e")  # Bottom number
 
+# Generate random numbers from the start of the root window
+generate_numbers()
 # call countdown function with # seconds
 countdown(4)
 # Call mainloop function
 root.mainloop()  # Run the Tkinter event loop
 
-
+print(wrong_answers, correct_answers)
 
 
 # def countdown():
