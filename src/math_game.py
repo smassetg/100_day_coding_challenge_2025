@@ -10,7 +10,8 @@ import tkinter as tk
 ###### Fixed variables
 max_number = 11
 num, num2 = 0, 0
-
+correct_answers = 0
+wrong_answers = 0
 
 ###### Program Functions
 
@@ -23,9 +24,8 @@ def countdown(seconds):
         root.after(1000, countdown, seconds - 1)  # Call this function again after 1 second
 
 def get_user_input(event=None): # Accept event arguement (required for .bind)
-    # Set values to count correct / incorrect answers
-    correct_answers = 0
-    wrong_answers = 0
+    # Set values to count correct / incorrect answers, set as global variables
+    global correct_answers, wrong_answers
 
     user_answer = entry_box.get().strip()
     print(user_answer)
@@ -89,7 +89,8 @@ countdown(4)
 # Call mainloop function
 root.mainloop()  # Run the Tkinter event loop
 
-print(wrong_answers, correct_answers)
+print("Wrong answers XXX:", wrong_answers)
+print("correct answers XXX:", correct_answers)
 
 
 # def countdown():
